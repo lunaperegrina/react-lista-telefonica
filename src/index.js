@@ -8,5 +8,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root'),
 );
-
-// Aula 7: 00:00 // Rua do cajueiro numero 14
