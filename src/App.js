@@ -1,60 +1,93 @@
-/* eslint-disable react/jsx-tag-spacing */
 import React, { useState, useEffect } from 'react';
+import './App.css';
+import MaterialTable from 'material-table';
+import { AddBox, ArrowDownward } from '@material-ui/icons';
 import api from './services/api';
-import Main from './components/Main';
-// import './App.css';
 
 export default function App() {
-  const [contatos, setContatos] = useState([]);
-  const novoNomeContato = '';
+  const [data, setData] = useState([]);
 
-  useEffect(async () => {
+  useEffect(() => {
     indexContatos();
   }, []);
 
   async function indexContatos() {
-    const data = await api
+    const json = await api
     .get('/contatos')
     .then((res) => res.data)
     .catch((err) => {
       console.error(`ops! ocorreu um erro${err}`);
     });
 
-    console.log(data);
-    setContatos(data);
+    const obj = [];
+
+    for (let i = 0; i < json.length; i++) {
+      obj.push(json[i]);
+    }
+
+    setData(obj);
   }
 
-  async function deleteContato(id) {
-    await api.delete(`/contatos/${id}`);
-    indexContatos();
-  }
-
-  async function postContato(name) {
-    await api.post('/contatos', {
-      name,
-    });
-  }
-
-  function mudarNovoContato(novoContato) {}
-
+  const columns = [
+    {
+      title: 'Name',
+      field: 'name',
+      validate: (rowData) => (rowData.name === undefined || rowData.name === '' ? 'Required' : true),
+    },
+    {
+      title: 'Email',
+      field: 'email',
+      validate: (rowData) => (rowData.email === undefined || rowData.email === '' ? 'Required' : true),
+    },
+    {
+      title: 'Phone',
+      field: 'phone',
+      validate: (rowData) => (rowData.phone === undefined || rowData.phone === '' ? 'Required' : true),
+    },
+];
   return (
-    <>
-      <h1>Hello</h1>
-      <ul>
-        {contatos.map((contato) => (
-          <li key={contato.id}>
-            {contato.name}
-            <br />
-            {contato.email}
-            <br />
-            <button type="button" onClick={() => deleteContato(contato.id)}>Delete</button>
-            <br />
-          </li>
-))}
-      </ul>
-      <input type="text" name="" id="" onChange={(novoContato) => mudarNovoContato(novoContato)}/>
-      <button type="submit" onClick={() => postContato(novoNomeContato)}>Adicionar</button>
+    <div className="App">
+      <h1 align="center">Contatos</h1>
+      <MaterialTable
+        title="Student Details"
+        columns={columns}
+        data={data}
+        options={{ actionsColumnIndex: -1, addRowPosition: 'first' }}
+        editable={{
+          onRowAdd: (newData) => new Promise((resolve, reject) => {
+            const { name, email, phone } = newData;
 
-    </>
+            api.post('/contatos', {
+              name, email, phone,
+            });
+
+            indexContatos();
+            resolve();
+          }),
+          onRowUpdate: (newData, oldData) => new Promise((resolve, reject) => {
+            console.log(newData);
+
+            const { name, email, phone } = newData;
+
+            api.put(`/contatos/${oldData.id}`, {
+              name,
+              email,
+              phone,
+          })
+            .then((resp) => {
+              indexContatos();
+              resolve();
+              });
+          }),
+          onRowDelete: (oldData) => new Promise((resolve, reject) => {
+            api.delete(`/contatos/${oldData.id}`)
+            .then((resp) => {
+              indexContatos();
+              resolve();
+              });
+          }),
+        }}
+      />
+    </div>
   );
 }

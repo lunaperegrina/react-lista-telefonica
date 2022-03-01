@@ -38,5 +38,6 @@ module.exports = {
         'consistent-return': 'off',
         'no-use-before-define': 'off',
         'eol-last': 'off',
+        'no-plusplus': 'off',
     },
 };
