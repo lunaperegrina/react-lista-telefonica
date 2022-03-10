@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/react-lista-telefonica/static/css/main.8abc526d.chunk.css",
+    "main.js": "/react-lista-telefonica/static/js/main.52c924a2.chunk.js",
+    "main.js.map": "/react-lista-telefonica/static/js/main.52c924a2.chunk.js.map",
+    "runtime-main.js": "/react-lista-telefonica/static/js/runtime-main.0ace7788.js",
+    "runtime-main.js.map": "/react-lista-telefonica/static/js/runtime-main.0ace7788.js.map",
+    "static/js/2.3de4c892.chunk.js": "/react-lista-telefonica/static/js/2.3de4c892.chunk.js",
+    "static/js/2.3de4c892.chunk.js.map": "/react-lista-telefonica/static/js/2.3de4c892.chunk.js.map",
+    "static/js/3.3152d7e7.chunk.js": "/react-lista-telefonica/static/js/3.3152d7e7.chunk.js",
+    "static/js/3.3152d7e7.chunk.js.map": "/react-lista-telefonica/static/js/3.3152d7e7.chunk.js.map",
+    "static/js/4.2fb92356.chunk.js": "/react-lista-telefonica/static/js/4.2fb92356.chunk.js",
+    "static/js/4.2fb92356.chunk.js.map": "/react-lista-telefonica/static/js/4.2fb92356.chunk.js.map",
+    "static/js/5.d2a71bc0.chunk.js": "/react-lista-telefonica/static/js/5.d2a71bc0.chunk.js",
+    "static/js/5.d2a71bc0.chunk.js.map": "/react-lista-telefonica/static/js/5.d2a71bc0.chunk.js.map",
+    "index.html": "/react-lista-telefonica/index.html",
+    "static/css/main.8abc526d.chunk.css.map": "/react-lista-telefonica/static/css/main.8abc526d.chunk.css.map",
+    "static/js/2.3de4c892.chunk.js.LICENSE.txt": "/react-lista-telefonica/static/js/2.3de4c892.chunk.js.LICENSE.txt",
+    "static/js/3.3152d7e7.chunk.js.LICENSE.txt": "/react-lista-telefonica/static/js/3.3152d7e7.chunk.js.LICENSE.txt",
+    "static/js/4.2fb92356.chunk.js.LICENSE.txt": "/react-lista-telefonica/static/js/4.2fb92356.chunk.js.LICENSE.txt",
+    "static/js/5.d2a71bc0.chunk.js.LICENSE.txt": "/react-lista-telefonica/static/js/5.d2a71bc0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0ace7788.js",
+    "static/js/2.3de4c892.chunk.js",
+    "static/css/main.8abc526d.chunk.css",
+    "static/js/main.52c924a2.chunk.js"
+  ]
+}

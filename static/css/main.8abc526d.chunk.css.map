@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/App.css"],"names":[],"mappings":"AAAA,EACI,QAAS,CACT,SAAU,CACV,SAAU,CACV,qBACJ,CAEA,KACI,sBACJ,CAEA,iBACI,SACJ","file":"main.8abc526d.chunk.css","sourcesContent":["* {\n    margin: 0;\n    padding: 0;\n    outline: 0;\n    box-sizing: border-box;\n}\n\nbody {\n    font-family: sans-serif;\n}\n\n.tabela-contatos {\n    margin: 5%;\n}"]}
